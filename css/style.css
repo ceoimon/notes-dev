@@ -1,0 +1,73 @@
+h1, .name, #back {
+  text-align: center;
+}
+
+::selection {
+  background: rgba(255,255,255,0.1);
+}
+
+.rDialog{
+  display: none;
+}
+.rDialog-mask{
+  display:none;
+}
+
+#back {
+  font-size: 16px;
+  display: block;
+  width: 90px;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: #555;
+  border: 1px solid #555;
+  margin: 0 auto;
+}
+
+#back:hover {
+  color: #fff;
+  background: #555;
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5) and (max-width: 640px), only screen and (-o-min-device-pixel-ratio: 3/2) and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 640px), only screen and (min-device-pixel-ratio: 1.5) and (max-width: 640px), only screen and (max-width: 640px) {
+  
+  .mask-disable-scroll {
+    overflow: hidden;
+  }
+
+  .rDialog{
+    display: block;
+  }
+
+  .rDialog-mask{
+    display: block;
+  }
+
+/*  h1 {
+    text-align: center;
+    font-size: 300%;
+  }
+*/
+  #myCanvas{
+/*    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);*/
+    width: 100%!important;
+    margin-top: -100px;
+  }
+
+/*  #back {
+    margin-top: 70px;
+  }*/
+}
+
+#myCanvas{
+/*    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);*/
+  margin-top: -100px;
+}
