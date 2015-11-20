@@ -1,0 +1,804 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="日常,练习," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Ceoimon's Notes" type="application/atom+xml" />
+
+
+<meta name="google-site-verification" content="yZ8ti7R5_qFEd_jN5-gEF4_Xn1BzwxEk186-uCOxzOs" />
+<link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+<link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/icon/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/icon/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/icon/manifest.json">
+<link rel="shortcut icon" href="/icon/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+<meta name="theme-color" content="#f5f5f5">
+
+
+
+
+
+<meta name="description" content="前言总是写前言是因为照顾像我这样的懒人，万一文章长了就不想看了，所以相当于是写一个概述放在前头，让人决定要不要看下去的。
+之前报名了百度 IFE 暑假训练营，形式是组队完成任务，然而自己认识的朋友不多，初涉前端圈子，自然没有找到认识的人组队刷副本。然后就加到群里自由组队，一个队伍收留了我，后来证实这个团队是不靠谱的，这里不多展开。然后我也不可能一个人去搞团队项目（实际上还是有人这么干的…)，所以就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpacePlatforms">
+<meta property="og:url" content="http://ceoimon.com/2015/spaceplatforms-practice/index.html">
+<meta property="og:site_name" content="Ceoimon's Notes">
+<meta property="og:description" content="前言总是写前言是因为照顾像我这样的懒人，万一文章长了就不想看了，所以相当于是写一个概述放在前头，让人决定要不要看下去的。
+之前报名了百度 IFE 暑假训练营，形式是组队完成任务，然而自己认识的朋友不多，初涉前端圈子，自然没有找到认识的人组队刷副本。然后就加到群里自由组队，一个队伍收留了我，后来证实这个团队是不靠谱的，这里不多展开。然后我也不可能一个人去搞团队项目（实际上还是有人这么干的…)，所以就">
+<meta property="og:image" content="http://ceoimon.com/images/post/Screen.Capture.at.20150724230722.png">
+<meta property="og:image" content="http://ceoimon.com/images/post/Screen.Capture.at.20150724230810.png">
+<meta property="og:updated_time" content="2015-11-20T16:46:03.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpacePlatforms">
+<meta name="twitter:description" content="前言总是写前言是因为照顾像我这样的懒人，万一文章长了就不想看了，所以相当于是写一个概述放在前头，让人决定要不要看下去的。
+之前报名了百度 IFE 暑假训练营，形式是组队完成任务，然而自己认识的朋友不多，初涉前端圈子，自然没有找到认识的人组队刷副本。然后就加到群里自由组队，一个队伍收留了我，后来证实这个团队是不靠谱的，这里不多展开。然后我也不可能一个人去搞团队项目（实际上还是有人这么干的…)，所以就">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> SpacePlatforms | Ceoimon's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+  <div id='wx_pic' style='margin:0 auto;display:none;'>
+<img src='/images/wx300.jpg' />
+</div>
+  <!--   <div id="loader_mb">
+    <svg id="mySVG" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 1010 1010" enable-background="new 0 0 1010 1010" xml:space="preserve" width="270" height="270">
+    <path fill="transparent" d="M947.1,669.6C820.2,610.5,731.2,503.2,694,374c-2-6.9-6-22-6-22s-1.7,0.4-4.4,1c-5.8,0-18.1,0-27.6,0
+      c0.1,0.4,0,0.1-0.5,4.2c-18.8,142.2-97.6,264.1-214,337.3c-2.8-3.6-7.1-8.9-11.8-14.5C364.6,600.9,325,496.3,325,381.6
+      c0-6.8,0.1-13.6,0.4-20.4c0.2-4.8,0.2-4.9,0.4-8.2c-0.6,0-1.3,0-1.9,0c0,0,0,0,0,0h-13.9c-13.7,0-14.1,0-14.1,0h-2
+      c0,0,0.2,3.5,0.4,8.4c0.3,6.1,0.5,12.2,0.5,18.4c0,1.7,0,8.2,0,9.6c-1.4,151.5-74.3,285.9-186.6,371C60.7,686.8,33,598.9,33,504.5
+      C33,244.1,243.7,33,503.6,33C710.2,33,885.7,166.5,949,352c0,0,0.4,1.1,0.5,1.1c2.2-0.7,8.8-3,28.5-10C910.6,145.1,724.3,5,504.9,5
+      C228.8,5,5,228.9,5,505s223.8,500,499.9,500c203.5,0,378.6-121.7,456.6-296.2c0.3,0.1,0.5,0.2,0.5,0.2l12-30c0,0-10.4-3.6-18-6.2
+      C951.9,671.3,949,670.3,947.1,669.6z M309.9,507c19.1,76.1,55.6,145.2,105,203c-66.2,35.8-143,56.6-227,58c-14,0.1-26.5-1-38.8-2.3
+      C227,699.3,284.3,609.4,309.9,507z M503.6,976c-150.1,0-283.9-70.4-370-180.1c10.3,1,27.8,2.1,56.4,2.1
+      c235.2,0,432.5-162.5,485.7-381.4c45.6,124.3,138.2,225,257.7,280.1C860,861.3,695.2,976,503.6,976z"/>
+    </svg>
+
+    <svg version="1.1" id="mySVG_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 250 50" enable-background="new 0 0 250 50" xml:space="preserve" width="300" height="150">
+    <g>
+      <path fill="none" d="M60.4,39h-17V6.7h1.9v30.4h15.1V39z"/>
+      <path fill="none" d="M69.4,39l-4.6-5.3V22l4.6-5.5h9.7l4.6,5.5v11.7L79.1,39H69.4z M78.2,37.1c1.2-1.4,2.3-2.6,3.5-4V22.6
+        c-1.2-1.5-2.3-2.7-3.6-4.2h-7.9c-1.2,1.5-2.3,2.7-3.6,4.2v10.4c1.2,1.4,2.3,2.6,3.5,4H78.2z"/>
+      <path fill="none" d="M88.2,17.1h13.5l3.4,3.2v18.7h-1.9v-2.8l-3,2.7H91l-3-3.1v-7.1l3-3.3h12.3v-4.2L101,19H88.2V17.1z M89.9,29.3
+        V35l1.9,2.1h7.8l3.7-3.3v-6.6H91.8L89.9,29.3z"/>
+      <path fill="none" d="M124.2,6.9h1.9V39h-13.2l-3.6-4.2V20.4l3.6-4.2h11.3V6.9z M111.2,21.1v13c0.9,1,1.6,1.9,2.5,3h10.5v-19h-10.4
+        L111.2,21.1z"/>
+      <path fill="none" d="M129.9,11.5l1.9-1.9l1.9,1.9l-1.9,1.9L129.9,11.5z M132.7,15.7v23.4h-1.9V15.7H132.7z"/>
+      <path fill="none" d="M153.3,39V22.2c-0.8-1.1-1.4-2.1-2.2-3.2h-9c-0.8,1-1.5,2.2-2.2,3.2V39H138V21.6l3.1-4.5h10.9l3.1,4.5V39
+        H153.3z"/>
+      <path fill="none" d="M160.5,46.4h13.2c0.9-0.8,1.6-1.6,2.5-2.4v-7.3l-2.1,2.2h-10.6l-3.2-3.7V20.1l3.2-3.5h10.6l2.1,2.3v-2.4h1.9
+        v28.4l-3.7,3.4h-13.8V46.4z M164.3,18.5c-0.8,0.8-1.3,1.5-2.1,2.3v13.7c0.7,0.8,1.4,1.6,2.1,2.5h9l2.9-3V21.8l-2.9-3.2H164.3z"/>
+      <path fill="none" d="M183.1,37l2.1-2l2.1,2l-2.1,2.1L183.1,37z"/>
+      <path fill="none" d="M192.5,37l2.1-2l2.1,2l-2.1,2.1L192.5,37z"/>
+      <path fill="none" d="M201.9,37l2.1-2l2.1,2l-2.1,2.1L201.9,37z"/>
+    </g>
+    </svg>
+  </div> -->
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="site-title">Ceoimon's Notes</span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SpacePlatforms
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2015-07-25T00:00:00+08:00" content="2015-07-25">
+              2015-07-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/spaceplatforms-practice/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/spaceplatforms-practice/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h3 id="前言">前言</h3><p><strong>总是写前言是因为照顾像我这样的懒人，万一文章长了就不想看了，所以相当于是写一个概述放在前头，让人决定要不要看下去的。</strong></p>
+<p>之前报名了<a target="_blank" href="//ife.baidu.com">百度 IFE </a>暑假训练营，形式是组队完成任务，然而自己认识的朋友不多，初涉前端圈子，自然没有找到认识的人组队刷副本。然后就加到群里自由组队，一个队伍收留了我，后来证实这个团队是不靠谱的，这里不多展开。然后我也不可能一个人去搞团队项目（实际上还是有人这么干的…)，所以就回到了“每逢期末考试的不明烦躁期”开的一个坑——之前还没听说 IFE 训练营的时候也是打算暑假要苦练前端技术，首先还是要练习好基本功“重构”，所以就网上找一些网页设计原型图开始切。然后这个项目完成度不是很高，因为我之前还打算靠着意淫把其他页面按同样风格做出来来着…但我还是学到了一些<del>（遇到了一些坑）</del>的。故写一篇文章来记录一下这次练习，下面涉及一些极其简单的前端知识，没兴趣的还是不要往下看了。<br><a id="more"></a></p>
+<h3 id="纵览">纵览</h3><p>首先要对比一下原型图和最终完成页面的截图，由于篇幅的问题我不能直接把图片贴在文章里面。</p>
+<ul>
+<li>原型图:(<a target="_blank" href="//7xj46o.com1.z0.glb.clouddn.com/sp.png">http://7xj46o.com1.z0.glb.clouddn.com/sp.png</a>)</li>
+<li>网页截图:(<a target="_blank" href="//7xj46o.com1.z0.glb.clouddn.com/SPScreen%20Capture.png">http://7xj46o.com1.z0.glb.clouddn.com/SPScreen%20Capture.png</a>)</li>
+<li>直接访问网页:(<a target="_blank" href="//ceoimon.com/SpacePlatforms">http://ceoimon.com/SpacePlatforms</a>)</li>
+</ul>
+<p>这里的原型图是大高清图，而截图是按正常 DPI 屏幕大约 1280px 宽来截取的。</p>
+<p>由于决定弄响应式，所以就不按照严格比例来切图了（要完全一像素不差地重构出来是有多烦..), 然而可以看出来实际效果确实是有减分的，可能是比例控制得不佳或者其他原因，反正就是看起来不那么大气了。</p>
+<p>头部大图由于尺寸非常大，我也只能对原图进行压缩(2.19MB → 666KB). 所以视觉效果会差一点（在我电脑上已经可以看到非常明显的色阶，但其实这可能是因为原图本来就是PS出来的，渐变工具弄出来的渐变就是这样的.., 我为什么这么清楚呢.., 你看下去就知道了），但加快了载入速度。</p>
+<p>字体方面由于深知字体加载的痛苦，个人博客就是使用了自定义字体所以加载比较慢，所以就没有使用原型图里的字体，多采用微软雅黑和 Arial 字体。</p>
+<p>除了头图和 logo 图是 PNG 格式图片，其他均采用 SVG 矢量格式，这是因为源图作者标明是适配 Retina 屏幕的 （当然我除了手机并没有其他高 DPI 设备可以做测试，但效果应该不至于好差）。</p>
+<h3 id="表单美化、事件绑定">表单美化、事件绑定</h3><p>原型图拿到手先从头部下手，然后马上就看到导航栏的右侧有一个应该是下拉表单的东西..至于它里面的内容是什么无从得知。但是我马上就想到了之前在<a target="_blank" href="//imooc.com">慕课网</a>做的一个<a target="_blank" href="//www.imooc.com/code/3631">编程练习</a>，我想我可以复用里面的代码。</p>
+<p>表单美化是基础，我这里实现的方式好简单，这是基本的 HTML 结构：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"divSelect notExpand"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span> <span class="attribute">class</span>=<span class="value">"myselect"</span>&gt;</span>MYSelect<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"selectList"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>One<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>Two<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>Three<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里面的 <code>myselect</code> 按钮完全可以用任何行内元素来替代，不过要记得把 <code>cursor</code> 设置为 <code>pointer</code>, 然后就可以随意修改样式。我这里是把整个下拉菜单设置成一个整体，通过绑定点击事件来控制 <code>class</code> 和 <code>height</code> 属性，使用 CSS3 动画来完成效果，因此 IE9 及以下的浏览器是不兼容的。</p>
+<p>在慕课网的练习里面，我是使用 <code>keyframes</code> 来完成动画效果的，坏处在于限制了高度，由于网页里面有几个类似的下拉菜单，所以应该使用 JS 控制来解耦样式和结构。</p>
+<p>通过绑定点击事件到 <code>document</code> 来完成点击空白处收起，这时菜单在绑定点击事件时需要停止冒泡以免触发绑定在 <code>document</code> 上的事件。还有一个小细节就是在编程练习里面要求绑定键盘事件，绑定 <code>keydown</code> 事件的函数应该先判断此时菜单是否处于展开状态还要注意 <code>preventDefault</code>, 否则随时随地都可以按下键盘来选择（这也是慕课网里挺多人犯的错误）。</p>
+<h4 id="坑1，叫你装逼不用_jQuery">坑1，叫你装逼不用 jQuery</h4><p>在下面的数据 Analytics 区域，有一个类似的下拉菜单，不一样的是它的内容应该会有12个，一月到十二月，那么总不能把下拉列表弄得好长好长吧，这时候就应该把 <code>overflow</code> set 为 <code>auto</code> 但是这时候又会出现了不协调的滚动条。</p>
+<p>一开始想着把滚动条设置为不显示就可以了，但是支持修改原生滚动条的浏览器只有 IE 和 Chrome, 这时我就想着自己写一个滚动的效果应该不难吧。主要就是把外层元素样式设置为 <code>overflow:hidden;</code>, 内里列表设置为 <code>position:absolute;</code>, 然后绑定 <code>mouseover</code>, <code>mouseover</code>, <code>touchstart</code>, <code>touchend</code> 这几个关键的事件和通过 <code>scroll</code> 事件来控制内里列表的 <code>top</code> 样式属性值，这听起来真的不难，然后我开始尝试着造轮子…</p>
+<p>最后，我引入了 jQuery 库和一个基于它的现成的自定义滚动栏插件，一开始我只是打算写纯碎的 JS 但是我还是屈服了，请不要问我原因是什么。</p>
+<p>最后实现的效果还是挺满意的，就是仅仅这么一个要求就引入库有点不值得，果然还是我太菜了。</p>
+<h3 id="SVG_交互、动画">SVG 交互、动画</h3><p>网页里面使用了三个主要的 SVG 用作数据展示，将各部分从 PS 文档转为 AI 并不困难，但是我要重新调整比例什么的花费了一些时间，还有它原来的图表也画的并不精确需要微调。</p>
+<p>一开始我就几乎想好了动效是怎样和交互应该是怎样，然后在完成基本的布局就开始写。</p>
+<p>在淡入淡出动画方面由于 jQuery 自带的不是非常流畅，因此引入 <a target="_blank" href="//julian.com/research/velocity/">Velocity.js</a> 库来优化（尽管还是会卡顿…)。</p>
+<p>时间轴的动效很简单，就是由无到有嘛，使用 <code>stroke-dashoffset</code> 和 <code>stroke-dasharray</code> 两个属性就可以控制 SVG 路径的描边效果， 使用纯 CSS3 也可以完成。后来我引入了 <a target="_blank" href="//http://snapsvg.io/">Snap.svg</a> 一个由 Adobe 开发的 SVG 动画库，然后重新计算了时间使用 JS 做出了动效，因为这里不需要太精确，所以时间计算非常粗略。在自适应方面设置最大宽度为 1440px 避免和页面比例失衡，然后当小于 1024px 时已经很难看清楚了，</p>
+<h4 id="坑2，不应该那么复杂才对">坑2，不应该那么复杂才对</h4><p>首先在原型图里的柱形图是用描边来画的，然后我神经质地把它转化为矩形，后来发现坑了自己。而且 AI 自身自带图表功能我之前也并不清楚，就使用了非常愚蠢的方式绘制图形，以至于使用了两层填充来绘制一条图形。其实这也只是自己挖的一个小坑。</p>
+<p>真正的坑在于原型图里柱状图只有13条，而10月有31天，多出来的可不能不管，于是我想到了拖动的方式来交互，然后就使用了 Snap.svg 来开发交互。过程挺不顺利，首先它偏偏要在两边加上淡入效果，也就是边上的透明度比较低，那动起来也要计算在内了。后来我写着写着，觉得为什么不把两边直接用一层渐变覆盖起来呢，然后试了一下，发现效果不堪入目：</p>
+<p><img class="img-responsive antimoderate" src="/images/post/Screen.Capture.at.20150724230722.png" alt="Screen Capture at 20150724230722" data-antimoderate-idata="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAArCAIAAADg5a/rAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACaklEQVRIx+1Xu24UQRDs6pl7+w7J3JEjWSJwREZETkbA1zniB8j5FCck2EJCsrA5hMTu7XQR7D32MfbOLSA5YLTJ9vZWV1fP9Mzg7OyFHDkApLj5RL8ew5M8nrWIdBPS3qSinEju7T2hU1LtzZplkarcSQLYF6+/IJ1a/RPoP2GdNF8fHev/0JERbT5V46Nk/Zege/XdBGgSwZIaUn34To+wWHA4Qp659VqO2Te6WFM4mYTFnOPJscQTBDGDBaE1zJ07XwI0dk81l3twq/G6tT7AVRHMRESMohDGI6WwpqCuMsnBgOMRhx4k78mgxRp1fjtblbFk+Y93b7KX58PLT0/efxDvGJv6NWg6JwoxIoR6rApxCEjOJ2G5sMU0QiQuSDwzCsov2GoOwAoNOax4YKVqHKsZj9VXUkQJZ9CHZnpSDwGkUUmAoiawmOsR0GSksgYEaGsdVTy1/iEuHVrQAKGGNuuKo48Btd4bcpes1Q4qKeRnlr19tX597q5uZhcfJVjKaozUqs0aZnY6C8+XCIUAwtRdprEgATFIUYUmgLDR7Bc2mdx7MKsrAhVxtdILKSPFzMlIDylRMHQ48Zi4EqEuSDkXGg0j24hX5MVBHlX7cmOXV7y+2YakQNW+frPLz7i+FYpAUL3LtM+1IjLwniIkw271k1wtlwDyPP++Xpd/mdnT01PvfVEUt3d3JCOCNHq8OjcYDADsIoLkyXy+XK1G4/Geh5lNptPVs9V0Ntv6dd7A9j/vQwLYbDZGOlXvt7ehrdFMVb33ALonX3ujIrnLg+VNoGEsX/sccbaV25GN1gnAo7s3JrH5DVYCGpKIi//7AAAAAElFTkSuQmCC" data-dwidth="392"" data-dheight="565""></p>
+<p>可以看到明显的色阶条纹，什么，你看不出来？</p>
+<p><img class="img-responsive antimoderate" src="/images/post/Screen.Capture.at.20150724230810.png" alt="Screen Capture at 20150724230810" data-antimoderate-idata="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAYCAIAAABiC9roAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB3UlEQVRIx52VTW7UQBCF31dtMkQo4keRQIIFi0iIHUdhz6G4AUfjAgQCyQSS4K7Hop3ByvQkcSwvLHf3V3+vqzg6eqf7PJZLjK9eqhSXYTj+FqdnimiLgG0gImqtgKS4F7edl2TLllK+e/8C9ITH13bmMVkgUCBof4ZlaPW4koFMMsnCWDUUw1L0zMA8mHSuVj54UqCONU7PyFyGRrLMDXoEv/9cfXh/+ukjF5eq9cXnL+Xk5xY6woGEbGpdYDbQXqiGwi1jW+hWjeZfx23/r2QnS4lSyslWZ4el28Q1W2L+aUiRkG3PQvFNtG5AAhO5iekBuu6Ibwo0Uphode6iuYV97W8v3bRskI2wOCGSewlBuL3QyshStHdFhUQ0r902Rv/8jpwg0VzrrJmW6DvLyIK/m9UHi+92rgwJFjuvzB3nu2W0JKywSOJhutYOXU9luI/XO+/5pg14exzgKlc8oXc0VeSuTAIVaKPEM7qlITjYU1jjdGW4OXbb+GmNz75hL1dDa41xNervhBCieny2f/n6abGQ9r5+53Ictty9jttbo0TsVzIt5Vhzo21EJZ+P5fBkWK/XNfP44opSOgnZTP5tenn0KKTMqsx5TE6Xx6vDt2/i5Mf5+tzrX5L+AZHR3/v1kZWIAAAAAElFTkSuQmCC" data-dwidth="864"" data-dheight="682""></p>
+<p>这下你看清楚了吧，这显然是不可接受的。</p>
+<p>当然完全可以就弄两个颜色遮罩，但我已几近乎完成这个交互了，再考虑到颜色变化的自然过渡，最终还是没有去折腾（主要还是懒）。</p>
+<p>然后当我弄得差不多的时候发现这样普通的拖动似乎太平常，而且不太流畅，我就想到了要加入惯性滑动…结果搞了几个小时都没有弄出来像样的效果还是放弃了。果然还是眼高手低，仅仅是像平时手机浏览的那种滑动惯性都做不出来。貌似把它改成滚动的就应该可以在手机上面有滚动惯性了，我也没有再深入研究，反正现在的效果是不太令人满意。</p>
+<p>教训：<strong>主要还是在计算边界情况上面和自适应上面要注意处理的情况比较多，需要全面分析临界状况，否则容易出现错误。</strong></p>
+<h3 id="滚动加载特效">滚动加载特效</h3><p>这些都是最后阶段要做的事，加点特技什么的还是要的，首先想到的是滚动加载的动画，这是一种被广泛使用的技术，我不清楚这个技术的术语的啥。</p>
+<p>我首先编写了一个函数来判断元素是否已经到达可视区域：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//el: element, wh: windowHeight, st: scrollTop</span></span><br><span class="line">isVisiable: <span class="function"><span class="keyword">function</span>(<span class="params">el, wh, st, delta</span>) </span>&#123;</span><br><span class="line">  delta = delta || <span class="number">260</span>;</span><br><span class="line">  <span class="keyword">return</span> $(el).offset().top &lt; wh + st - delta;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后编写一系列动画函数，绑定 <code>scroll</code> 事件，每次滚动都遍历执行一次动画函数。</p>
+<p>这里是其中一个动画代码函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">overview: <span class="function"><span class="keyword">function</span>(<span class="params">wh, st</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> $el = $(<span class="string">".overview"</span>);</span><br><span class="line">  <span class="keyword">if</span>(demo.animateBlock.isVisiable($el, wh, st, <span class="number">550</span>)) &#123;</span><br><span class="line">    <span class="keyword">var</span> st = $(<span class="string">".overview .subtitle"</span>),</span><br><span class="line">        t = $(<span class="string">".overview .th2"</span>),</span><br><span class="line">        p = $(<span class="string">".overview p"</span>),</span><br><span class="line">        pB = $(<span class="string">".overview .progressBar"</span>);</span><br><span class="line">    st.velocity(<span class="string">'transition.slideUpIn'</span>, &#123;display: <span class="literal">null</span>&#125;);</span><br><span class="line">    t.velocity(<span class="string">'transition.slideUpIn'</span>, &#123;delay:<span class="number">50</span>, display: <span class="literal">null</span>&#125;);</span><br><span class="line">    p.velocity(<span class="string">'transition.slideUpIn'</span>, &#123;delay:<span class="number">100</span>, display: <span class="literal">null</span>, </span><br><span class="line">      begin: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        pB.addClass(<span class="string">"loaded"</span>);</span><br><span class="line">      &#125;&#125;);</span><br><span class="line">    <span class="keyword">delete</span> demo.animateBlock.animations.overview;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要记住的是这样的只需要加载一次的动画在触发完成后需要调用 <code>delete</code> 来删除成员，防止下次遍历触发，  <code>delete</code> 关键词一般用得很少，所以这里要留心。然后有些网站是每次滚动到那里都会有动效，想多次触发也很简单，只要多写一些动画归位函数和判断是否已经离开视线的函数就可以。</p>
+<h3 id="响应式设计">响应式设计</h3><p>技术并不难，主要使用到 CSS3 媒体查询判断屏幕宽度来调整样式。</p>
+<p>重写了顶部栏的导航。</p>
+<p>重写了时间轴的代码，因为当屏幕小于 1024px 时正常横放的时间轴已经很难看清楚了，因此使用 <code>before</code>,<code>after</code> 伪元素来“绘制”时间轴。</p>
+<p>还有各种调整，使其适配从 360px 到 1440+px 的显示效果。</p>
+<p><a target="_blank" href="//7xj46o.com1.z0.glb.clouddn.com/SPScreen%20Capturemobi.png">这里是一张屏幕宽度在 670px 左右的屏幕截图</a></p>
+<h3 id="结言">结言</h3><p>这次练习也就写了不到1K行的 JS, 1K多行的 CSS, 和不知道怎么算的HTML（ SVG 代码由 AI 生成）。总的来说还是独立完成了一次重构开发，真正有营养的代码写得很少，其中遇到的坑有的已经在写这篇文章的时候忘记了。接下来打算自己一个人尝试着写暑假训练营的 tasks, task01 应该是赶不上了，但还是尽量让自己忙起来吧（暑假在家的效率真的好低）。</p>
+<hr>
+<p><strong>完。</strong></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/日常/" rel="tag">#日常</a>
+          
+            <a href="/tags/练习/" rel="tag">#练习</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/original-dream/" rel="next" title="初衷，目标，期望">
+                <i class="fa fa-chevron-left"></i> 初衷，目标，期望
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/spaceplatforms-practice/"
+           data-title="SpacePlatforms" data-url="http://ceoimon.com/2015/spaceplatforms-practice/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.png" alt="ceoimon" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">ceoimon</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">You can never study enough.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">categories</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">tags</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ceoimon" target="_blank">
+                  <span class="myicon-GitHub"></span>
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/345688688" target="_blank">
+                  <span class="myicon-Weibo"></span>
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:ceoimonzyu@gmail.com" target="_blank">
+                  <span class="myicon-Mail"></span>
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纵览"><span class="nav-number">2.</span> <span class="nav-text">纵览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单美化、事件绑定"><span class="nav-number">3.</span> <span class="nav-text">表单美化、事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#坑1，叫你装逼不用_jQuery"><span class="nav-number">3.1.</span> <span class="nav-text">坑1，叫你装逼不用 jQuery</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG_交互、动画"><span class="nav-number">4.</span> <span class="nav-text">SVG 交互、动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#坑2，不应该那么复杂才对"><span class="nav-number">4.1.</span> <span class="nav-text">坑2，不应该那么复杂才对</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滚动加载特效"><span class="nav-number">5.</span> <span class="nav-text">滚动加载特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式设计"><span class="nav-number">6.</span> <span class="nav-text">响应式设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结言"><span class="nav-number">7.</span> <span class="nav-text">结言</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="ceoimon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ceoimon</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>&nbsp;based&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ceoimon"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/js/antimoderate.js"></script>
+<script type="text/javascript" src="/js/antimoderateImages.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
