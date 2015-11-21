@@ -1,4 +1,4 @@
-/*!
+/*
  * Lazy Load - jQuery plugin for lazy loading images
  *
  * Copyright (c) 2007-2015 Mika Tuupola
@@ -9,7 +9,7 @@
  * Project home:
  *   http://www.appelsiini.net/projects/lazyload
  *
- * Version:  1.9.7
+ * Version:  1.9.5
  *
  */
 
@@ -98,6 +98,7 @@
             /* When appear is triggered load original image. */
             $self.one("appear", function() {
                 if (!this.loaded) {
+                    $self.parent('a').attr('href', $self.attr("data-" + settings.data_attribute));
                     if (settings.appear) {
                         var elements_left = elements.length;
                         settings.appear.call(self, elements_left, settings);

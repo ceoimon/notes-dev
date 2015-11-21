@@ -232,14 +232,14 @@
                     }
                 }
 
-                var orig_src = img.getAttribute('src');
-                if(orig_src != null && orig_src != '') {
-                    var orig_img = new Image();
-                    orig_img.onload = function() {
-                        img.src = orig_src;
-                    };
-                    orig_img.src = orig_src;
-                }
+                // var orig_src = img.getAttribute('src');
+                // if(orig_src != null && orig_src != '') {
+                //     var orig_img = new Image();
+                //     orig_img.onload = function() {
+                //         img.src = orig_src;
+                //     };
+                //     orig_img.src = orig_src;
+                // }
 
                 canvas.getContext('2d').putImageData(imageData, 0, 0);
                 img.src = canvas.toDataURL();

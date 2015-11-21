@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  if(isMobile())return;
   $('.content img').not('.group-picture img').each(function () {
 
     var $image = $(this);
@@ -6,7 +7,7 @@ $(document).ready(function() {
     var $imageWrapLink = $image.parent('a');
 
     if ($imageWrapLink.size() < 1) {
-      $imageWrapLink = $image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a');
+      $imageWrapLink = $image.wrap('<a href="/vendors/fancybox/source/fancybox_loading.gif"></a>').parent('a');
     }
 
     $imageWrapLink.addClass('fancybox');
@@ -19,6 +20,7 @@ $(document).ready(function() {
   });
 });
 
+if(!isMobile())
 $('.fancybox').fancybox({
   helpers: {
     overlay: {

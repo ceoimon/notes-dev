@@ -2,11 +2,6 @@ $(document).ready(function () {
 
   isMobile() && FastClick.attach(document.body);
 
-  $("#posts").find('img').lazyload({
-    placeholder: "{{ url_for(theme.images) }}/loading.gif",
-    effect: "fadeIn"
-  });
-
   var b2top = $('.back-to-top');
   var to = 0;
   $(window).bind('scroll', displayBTTOrNot);
@@ -39,7 +34,7 @@ $(document).ready(function () {
         $('body').css({transition: 'opacity 0.2s'});
         $('body').css({opacity: '0'});
       }
-      body.animate({scrollTop: 0}, {duration:600, complete: function() {
+      $('body').animate({scrollTop: 0}, {duration:600, complete: function() {
         $('body').css({opacity: '1'});
         setTimeout("$('body').removeAttr('style')", 200);
       }});
@@ -70,6 +65,8 @@ $(document).ready(function () {
     .add(motionMiddleWares.postList)
     .add(motionMiddleWares.sidebar);
 
+  !hasLoader() && $('.container').css('display','block');
+
   // Bootstrap Motion.
-  CONFIG.motion && motionIntegrator.bootstrap();
+  CONFIG.motion && !hasLoader() && motionIntegrator.bootstrap();
 });

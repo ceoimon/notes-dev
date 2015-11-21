@@ -6,6 +6,10 @@ function hasMobileUA () {
   return pa.test(ua);
 }
 
+function hasLoader () {
+  return !!$('#loader_mb')[0];
+}
+
 function isDesktop () {
   return screen.width > 991 && !hasMobileUA();
 }

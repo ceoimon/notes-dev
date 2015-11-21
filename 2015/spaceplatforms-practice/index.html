@@ -74,8 +74,6 @@
 <meta property="og:site_name" content="Ceoimon's Notes">
 <meta property="og:description" content="前言总是写前言是因为照顾像我这样的懒人，万一文章长了就不想看了，所以相当于是写一个概述放在前头，让人决定要不要看下去的。
 之前报名了百度 IFE 暑假训练营，形式是组队完成任务，然而自己认识的朋友不多，初涉前端圈子，自然没有找到认识的人组队刷副本。然后就加到群里自由组队，一个队伍收留了我，后来证实这个团队是不靠谱的，这里不多展开。然后我也不可能一个人去搞团队项目（实际上还是有人这么干的…)，所以就">
-<meta property="og:image" content="http://ceoimon.com/images/post/Screen.Capture.at.20150724230722.png">
-<meta property="og:image" content="http://ceoimon.com/images/post/Screen.Capture.at.20150724230810.png">
 <meta property="og:updated_time" content="2015-11-20T16:46:03.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpacePlatforms">
@@ -115,7 +113,7 @@
   <div id='wx_pic' style='margin:0 auto;display:none;'>
 <img src='/images/wx300.jpg' />
 </div>
-  <!--   <div id="loader_mb">
+    <div id="loader_mb">
     <svg id="mySVG" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 1010 1010" enable-background="new 0 0 1010 1010" xml:space="preserve" width="270" height="270">
     <path fill="transparent" d="M947.1,669.6C820.2,610.5,731.2,503.2,694,374c-2-6.9-6-22-6-22s-1.7,0.4-4.4,1c-5.8,0-18.1,0-27.6,0
@@ -149,8 +147,7 @@
       <path fill="none" d="M201.9,37l2.1-2l2.1,2l-2.1,2.1L201.9,37z"/>
     </g>
     </svg>
-  </div> -->
-
+  </div>
 
   <div class="container one-column page-post-detail">
     <div class="headband"></div>
@@ -343,9 +340,9 @@
 <p>时间轴的动效很简单，就是由无到有嘛，使用 <code>stroke-dashoffset</code> 和 <code>stroke-dasharray</code> 两个属性就可以控制 SVG 路径的描边效果， 使用纯 CSS3 也可以完成。后来我引入了 <a target="_blank" href="//http://snapsvg.io/">Snap.svg</a> 一个由 Adobe 开发的 SVG 动画库，然后重新计算了时间使用 JS 做出了动效，因为这里不需要太精确，所以时间计算非常粗略。在自适应方面设置最大宽度为 1440px 避免和页面比例失衡，然后当小于 1024px 时已经很难看清楚了，</p>
 <h4 id="坑2，不应该那么复杂才对">坑2，不应该那么复杂才对</h4><p>首先在原型图里的柱形图是用描边来画的，然后我神经质地把它转化为矩形，后来发现坑了自己。而且 AI 自身自带图表功能我之前也并不清楚，就使用了非常愚蠢的方式绘制图形，以至于使用了两层填充来绘制一条图形。其实这也只是自己挖的一个小坑。</p>
 <p>真正的坑在于原型图里柱状图只有13条，而10月有31天，多出来的可不能不管，于是我想到了拖动的方式来交互，然后就使用了 Snap.svg 来开发交互。过程挺不顺利，首先它偏偏要在两边加上淡入效果，也就是边上的透明度比较低，那动起来也要计算在内了。后来我写着写着，觉得为什么不把两边直接用一层渐变覆盖起来呢，然后试了一下，发现效果不堪入目：</p>
-<p><img class="img-responsive antimoderate" src="/images/post/Screen.Capture.at.20150724230722.png" alt="Screen Capture at 20150724230722" data-antimoderate-idata="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAArCAIAAADg5a/rAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACaklEQVRIx+1Xu24UQRDs6pl7+w7J3JEjWSJwREZETkbA1zniB8j5FCck2EJCsrA5hMTu7XQR7D32MfbOLSA5YLTJ9vZWV1fP9Mzg7OyFHDkApLj5RL8ew5M8nrWIdBPS3qSinEju7T2hU1LtzZplkarcSQLYF6+/IJ1a/RPoP2GdNF8fHev/0JERbT5V46Nk/Zege/XdBGgSwZIaUn34To+wWHA4Qp659VqO2Te6WFM4mYTFnOPJscQTBDGDBaE1zJ07XwI0dk81l3twq/G6tT7AVRHMRESMohDGI6WwpqCuMsnBgOMRhx4k78mgxRp1fjtblbFk+Y93b7KX58PLT0/efxDvGJv6NWg6JwoxIoR6rApxCEjOJ2G5sMU0QiQuSDwzCsov2GoOwAoNOax4YKVqHKsZj9VXUkQJZ9CHZnpSDwGkUUmAoiawmOsR0GSksgYEaGsdVTy1/iEuHVrQAKGGNuuKo48Btd4bcpes1Q4qKeRnlr19tX597q5uZhcfJVjKaozUqs0aZnY6C8+XCIUAwtRdprEgATFIUYUmgLDR7Bc2mdx7MKsrAhVxtdILKSPFzMlIDylRMHQ48Zi4EqEuSDkXGg0j24hX5MVBHlX7cmOXV7y+2YakQNW+frPLz7i+FYpAUL3LtM+1IjLwniIkw271k1wtlwDyPP++Xpd/mdnT01PvfVEUt3d3JCOCNHq8OjcYDADsIoLkyXy+XK1G4/Geh5lNptPVs9V0Ntv6dd7A9j/vQwLYbDZGOlXvt7ehrdFMVb33ALonX3ujIrnLg+VNoGEsX/sccbaV25GN1gnAo7s3JrH5DVYCGpKIi//7AAAAAElFTkSuQmCC" data-dwidth="392" data-dheight="565"></p>
+<p><img class="img-responsive antimoderate" data-original="/images/post/Screen.Capture.at.20150724230722.png" alt="Screen Capture at 20150724230722" data-antimoderate-idata="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAArCAIAAADg5a/rAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACaklEQVRIx+1Xu24UQRDs6pl7+w7J3JEjWSJwREZETkbA1zniB8j5FCck2EJCsrA5hMTu7XQR7D32MfbOLSA5YLTJ9vZWV1fP9Mzg7OyFHDkApLj5RL8ew5M8nrWIdBPS3qSinEju7T2hU1LtzZplkarcSQLYF6+/IJ1a/RPoP2GdNF8fHev/0JERbT5V46Nk/Zege/XdBGgSwZIaUn34To+wWHA4Qp659VqO2Te6WFM4mYTFnOPJscQTBDGDBaE1zJ07XwI0dk81l3twq/G6tT7AVRHMRESMohDGI6WwpqCuMsnBgOMRhx4k78mgxRp1fjtblbFk+Y93b7KX58PLT0/efxDvGJv6NWg6JwoxIoR6rApxCEjOJ2G5sMU0QiQuSDwzCsov2GoOwAoNOax4YKVqHKsZj9VXUkQJZ9CHZnpSDwGkUUmAoiawmOsR0GSksgYEaGsdVTy1/iEuHVrQAKGGNuuKo48Btd4bcpes1Q4qKeRnlr19tX597q5uZhcfJVjKaozUqs0aZnY6C8+XCIUAwtRdprEgATFIUYUmgLDR7Bc2mdx7MKsrAhVxtdILKSPFzMlIDylRMHQ48Zi4EqEuSDkXGg0j24hX5MVBHlX7cmOXV7y+2YakQNW+frPLz7i+FYpAUL3LtM+1IjLwniIkw271k1wtlwDyPP++Xpd/mdnT01PvfVEUt3d3JCOCNHq8OjcYDADsIoLkyXy+XK1G4/Geh5lNptPVs9V0Ntv6dd7A9j/vQwLYbDZGOlXvt7ehrdFMVb33ALonX3ujIrnLg+VNoGEsX/sccbaV25GN1gnAo7s3JrH5DVYCGpKIi//7AAAAAElFTkSuQmCC" data-dwidth="392" data-dheight="565"></p>
 <p>可以看到明显的色阶条纹，什么，你看不出来？</p>
-<p><img class="img-responsive antimoderate" src="/images/post/Screen.Capture.at.20150724230810.png" alt="Screen Capture at 20150724230810" data-antimoderate-idata="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAYCAIAAABiC9roAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB3UlEQVRIx52VTW7UQBCF31dtMkQo4keRQIIFi0iIHUdhz6G4AUfjAgQCyQSS4K7Hop3ByvQkcSwvLHf3V3+vqzg6eqf7PJZLjK9eqhSXYTj+FqdnimiLgG0gImqtgKS4F7edl2TLllK+e/8C9ITH13bmMVkgUCBof4ZlaPW4koFMMsnCWDUUw1L0zMA8mHSuVj54UqCONU7PyFyGRrLMDXoEv/9cfXh/+ukjF5eq9cXnL+Xk5xY6woGEbGpdYDbQXqiGwi1jW+hWjeZfx23/r2QnS4lSyslWZ4el28Q1W2L+aUiRkG3PQvFNtG5AAhO5iekBuu6Ibwo0Uphode6iuYV97W8v3bRskI2wOCGSewlBuL3QyshStHdFhUQ0r902Rv/8jpwg0VzrrJmW6DvLyIK/m9UHi+92rgwJFjuvzB3nu2W0JKywSOJhutYOXU9luI/XO+/5pg14exzgKlc8oXc0VeSuTAIVaKPEM7qlITjYU1jjdGW4OXbb+GmNz75hL1dDa41xNervhBCieny2f/n6abGQ9r5+53Ictty9jttbo0TsVzIt5Vhzo21EJZ+P5fBkWK/XNfP44opSOgnZTP5tenn0KKTMqsx5TE6Xx6vDt2/i5Mf5+tzrX5L+AZHR3/v1kZWIAAAAAElFTkSuQmCC" data-dwidth="864" data-dheight="682"></p>
+<p><img class="img-responsive antimoderate has-mobile-pic" data-original="/images/post/Screen.Capture.at.20150724230810.png" alt="Screen Capture at 20150724230810" data-antimoderate-idata="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAYCAIAAABiC9roAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB3UlEQVRIx52VTW7UQBCF31dtMkQo4keRQIIFi0iIHUdhz6G4AUfjAgQCyQSS4K7Hop3ByvQkcSwvLHf3V3+vqzg6eqf7PJZLjK9eqhSXYTj+FqdnimiLgG0gImqtgKS4F7edl2TLllK+e/8C9ITH13bmMVkgUCBof4ZlaPW4koFMMsnCWDUUw1L0zMA8mHSuVj54UqCONU7PyFyGRrLMDXoEv/9cfXh/+ukjF5eq9cXnL+Xk5xY6woGEbGpdYDbQXqiGwi1jW+hWjeZfx23/r2QnS4lSyslWZ4el28Q1W2L+aUiRkG3PQvFNtG5AAhO5iekBuu6Ibwo0Uphode6iuYV97W8v3bRskI2wOCGSewlBuL3QyshStHdFhUQ0r902Rv/8jpwg0VzrrJmW6DvLyIK/m9UHi+92rgwJFjuvzB3nu2W0JKywSOJhutYOXU9luI/XO+/5pg14exzgKlc8oXc0VeSuTAIVaKPEM7qlITjYU1jjdGW4OXbb+GmNz75hL1dDa41xNervhBCieny2f/n6abGQ9r5+53Ictty9jttbo0TsVzIt5Vhzo21EJZ+P5fBkWK/XNfP44opSOgnZTP5tenn0KKTMqsx5TE6Xx6vDt2/i5Mf5+tzrX5L+AZHR3/v1kZWIAAAAAElFTkSuQmCC" data-dwidth="864" data-dheight="682"></p>
 <p>这下你看清楚了吧，这显然是不可接受的。</p>
 <p>当然完全可以就弄两个颜色遮罩，但我已几近乎完成这个交互了，再考虑到颜色变化的自然过渡，最终还是没有去折腾（主要还是懒）。</p>
 <p>然后当我弄得差不多的时候发现这样普通的拖动似乎太平常，而且不太流畅，我就想到了要加入惯性滑动…结果搞了几个小时都没有弄出来像样的效果还是放弃了。果然还是眼高手低，仅仅是像平时手机浏览的那种滑动惯性都做不出来。貌似把它改成滚动的就应该可以在手机上面有滚动惯性了，我也没有再深入研究，反正现在的效果是不太令人满意。</p>
@@ -612,12 +609,12 @@
     
   
 
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
 <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
@@ -625,9 +622,9 @@
 
 
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   <script type="text/javascript" src="/js/antimoderate.js"></script>
 <script type="text/javascript" src="/js/antimoderateImages.js"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
   
@@ -793,6 +790,7 @@
 
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/js/loader.js"></script>
 
   
   
