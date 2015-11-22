@@ -41,18 +41,23 @@ $(document).ready(function() {
     var loaderContainer = $("#loader_mb");
     var counter = 0;
 
-    imageLoader('/images/shejiao_32.png');
-    imageLoader('/images/fancybox_btn.svg');
-    imageLoader('/vendors/fancybox/source/fancybox_loading.gif');
+    if(!isMobile()) {
+      imageLoader('/images/shejiao_32.png');
+      imageLoader('/images/fancybox_btn.svg');
+      imageLoader('/vendors/fancybox/source/fancybox_loading.gif');
 
-    fontLoader('Lato', loaderContainer[0]);
-    fontLoader('Lato', loaderContainer[0], 'bold');
-    fontLoader('Lato', loaderContainer[0], 'italic');
-    fontLoader('CEOIMONs Open Sans', loaderContainer[0]);
-    fontLoader('CEOIMONs iconfront', loaderContainer[0]);
-    fontLoader('FontAwesome', loaderContainer[0]);
+      fontLoader('Lato', loaderContainer[0]);
+      fontLoader('Lato', loaderContainer[0], 'bold');
+      fontLoader('Lato', loaderContainer[0], 'italic');
+      fontLoader('CEOIMONs Open Sans', loaderContainer[0]);
+      fontLoader('CEOIMONs iconfront', loaderContainer[0]);
+      fontLoader('FontAwesome', loaderContainer[0]);
+      
+      $('body').bind('fontLoaded', resourceLoaded);
+    } else {
+      $(window).bind('load', loadEnd);
+    }
 
-    $('body').bind('fontLoaded', resourceLoaded);
 
     function loadEnd() {
       $('body').trigger('pageLoaderFinish');
