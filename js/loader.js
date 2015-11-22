@@ -3,6 +3,7 @@ $(document).ready(function() {
   if(isMobile()){
     $('#mySVG').css({top: (($(window).height() / 2 - 155) + 'px'), left: (($(window).width() / 2 - 135) + 'px')});
     $('#mySVG_2').css({top: (($(window).height() / 2 + 75) + 'px'), left: (($(window).width() / 2 - 150) + 'px')});
+    $('#loader_mb').remove();
     var rule = /(.png$|.jpg$|.jpeg$|.bmp$)/;
     var images = $('#posts').find('.has-mobile-pic');
     images.each(function() {
@@ -20,6 +21,13 @@ $(document).ready(function() {
       },300);
     });
     pageLoader();
+  } else {
+    $('.container').css('display','block');
+    motionIntegrator.bootstrap();
+    $("#posts").find('img').lazyload({
+      threshold : 200,
+      effect: "fadeIn"
+    });
   }
 
   function loaderCB() {
